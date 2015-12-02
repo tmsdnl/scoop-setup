@@ -11,7 +11,7 @@ if ($profile) {
 
         # Create new file by writing empty string to a path
         '' > $profile;
-        Write-Success 'PowerShell profile created.';
+        Write-Output 'PowerShell profile created.';
     }
 
     # Update profile
@@ -20,7 +20,7 @@ if ($profile) {
     if (($profile_content | Select-String 'Remove-Item') -eq $null) {
         $content = 'echo Works';
         $content + @($profile_content) > $profile;
-        Write-Success 'PowerShell profile updated successfully. Please restart PowerShell.';
+        Write-Output 'PowerShell profile updated successfully. Please restart PowerShell.';
     }
 } else {
     Write-Warning 'PowerShell $profile variable does not exist. Setup is unable to add start up scripts.';
