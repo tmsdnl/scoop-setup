@@ -5,7 +5,7 @@ if ($profile) {
         Write-Output 'PowerShell profile does not exist, creating.';
         $profile_dir = Split-Path $profile;
 
-        if (!Test-Path $profile_dir) {
+        if (!(Test-Path $profile_dir)) {
             mkdir $profile_dir > $null;
         }
 
