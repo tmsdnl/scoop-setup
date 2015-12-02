@@ -1,7 +1,7 @@
 # Setup PowerShell profile
 if ($profile) {
     # Create profile
-    if (!Test-Path $profile) {
+    if (!(Test-Path $profile)) {
         Write-Output 'PowerShell profile does not exist, creating.';
         $profile_dir = Split-Path $profile;
 
